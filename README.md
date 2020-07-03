@@ -14,10 +14,7 @@ The C++ version of primetime can be build via cmake:
     Usage: primetime <num_primes_to_generate>
 E.g:
 
-    >primetime 4
+    > primetime 1000000
     Generating prime numbers!
-    2
-    3
-    5
-    7
-    Generated 4 primes in 3.2e-06 seconds
+    Generated 1,000,000 primes in 4.30171 seconds
+    Smallest 2 largest 15,485,863
