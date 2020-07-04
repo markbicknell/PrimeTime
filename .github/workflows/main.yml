@@ -54,6 +54,7 @@ jobs:
           vcpkgTriplet: '${{ matrix.triplet }}'
           vcpkgDirectory: '${{ runner.workspace }}/b/vcpkg'
           vcpkgGitCommitId: '${{ matrix.vcpkgCommitId }}'
+      #dunno why we need this tbh
       - name: dir
         run: find $RUNNER_WORKSPACE
         shell: bash

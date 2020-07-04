@@ -3,6 +3,7 @@
 #include <vector>
 #include <string>
 #include <chrono>
+#include <math.h>
 
 // Remove the x to print out the results (this can be very slow for large numbers of primes).
 #define PRINT_RESULTSx
