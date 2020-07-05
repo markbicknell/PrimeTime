@@ -1,6 +1,10 @@
 # PrimeTime
 Prime number generation exercise.
 
+<p align="left">
+  <a href="https://github.com/markbicknell/PrimeTime"><img alt="CI Status" src="https://github.com/markbicknell/PrimeTime/workflows/CI/badge.svg"></a>
+</p>
+
 ## Building
 The C++ version of primetime can be build via cmake:
 
