@@ -4,7 +4,7 @@
 #include <string>
 #include <chrono>
 
-#include "cpu_generator\cpu_generator.h"
+#include "cpu_generator/cpu_generator.h"
 
 // Remove the x to print out the results (this can be very slow for large numbers of primes).
 #define PRINT_RESULTSx

@@ -1,5 +1,6 @@
 #include "cpu_generator.h"
 #include <math.h>
+#include <cstdint>
 
 std::vector<std::uint64_t> generate_primes(size_t num_primes_to_generate) {
     std::vector<std::uint64_t> primes;
