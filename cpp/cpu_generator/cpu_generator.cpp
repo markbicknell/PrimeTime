@@ -1,9 +1,8 @@
 #include "cpu_generator.h"
 #include <math.h>
-#include <cstdint>
 
-std::vector<std::uint64_t> generate_primes(size_t num_primes_to_generate) {
-    std::vector<std::uint64_t> primes;
+std::vector<uint64_t> generate_primes(size_t num_primes_to_generate) {
+    std::vector<uint64_t> primes;
 
     // 1 is not a prime so we start with 2
     uint64_t number_to_test = 2;
