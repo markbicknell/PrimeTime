@@ -87,5 +87,8 @@ jobs:
         run: pwd
         shell: bash
       - name: Run unit tests
-        run: ./PrimeTime/b/ninja/unit_test
+        run: |
+          cd ..
+          ./b/ninja/unit_test
+          
         shell: bash
