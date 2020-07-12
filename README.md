@@ -22,3 +22,9 @@ E.g:
     Generating prime numbers!
     Generated 1,000,000 primes in 4.30171 seconds
     Smallest 2 largest 15,485,863
+
+## Testing
+PrimeTime uses [Catch2](https://github.com/catchorg/Catch2) for unit tests.
+From the cmake build directory simply run:
+
+    ctest
