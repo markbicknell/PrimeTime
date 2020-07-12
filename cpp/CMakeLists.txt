@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.10)
 
 project(PrimeTime)
 
+set(CMAKE_CXX_STANDARD 11)
+
 # CPU generation library
 add_library (cpu_generator
              cpu_generator/cpu_generator.cpp
