@@ -3,7 +3,8 @@
 #include <vector>
 #include <string>
 #include <chrono>
-#include <math.h>
+
+#include "cpu_generator/cpu_generator.h"
 
 // Remove the x to print out the results (this can be very slow for large numbers of primes).
 #define PRINT_RESULTSx
@@ -17,6 +18,7 @@ std::string int_to_grouped_digits(T integer) {
     return oss.str();
 }
 
+
 int main(int argc, const char** argv) {
     if(argc != 2) {
         std::cout << "Usage: primetime <num_primes_to_generate>";
@@ -25,32 +27,8 @@ int main(int argc, const char** argv) {
 
     size_t num_primes_to_compute = (size_t)std::stoi(argv[1]);
     std::cout << "Generating prime numbers!\n";
-    std::vector<int64_t> primes;
-
-    // 1 is not a prime so we start with 2
-    int64_t number_to_test = 2;
-
     auto start = std::chrono::system_clock::now();
-    while (primes.size() < num_primes_to_compute) {
-        // If any of the existing primes are a factor, then this number is not a prime.
-        // Note that we stop when we cross the square root of the number, as we would have found
-        // a factor by then if there was one
-        int64_t square_root = (int64_t)floor(sqrt(number_to_test));
-        bool found_factor = false;
-        for (size_t prime_index = 0; prime_index < primes.size() &&
-                                     primes[prime_index] <= square_root; prime_index++) {
-            if (number_to_test % primes[prime_index] == 0) {
-                found_factor = true;
-                break;
-            }
-        }
-
-        if (!found_factor) {
-            primes.push_back(number_to_test);
-        }
-
-        number_to_test++;
-    }
+    std::vector<uint64_t> primes = generate_primes(num_primes_to_compute);
     auto end = std::chrono::system_clock::now();
     std::chrono::duration<double> calculation_time = end - start;
 
