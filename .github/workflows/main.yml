@@ -37,11 +37,6 @@ jobs:
       - uses: actions/checkout@v1
         with:
           submodules: true
-
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
       - uses: lukka/get-cmake@latest
       - name: dir
         run: find $RUNNER_WORKSPACE
@@ -80,13 +75,8 @@ jobs:
           buildWithCMakeArgs: '-- -v'
           vcpkgTriplet: ${{ steps.runvcpkg.outputs.RUNVCPKG_VCPKG_TRIPLET_OUT }}
           buildDirectory: '${{ runner.workspace }}/b/ninja/'
-      - name: post_build_dir
-        run: find $RUNNER_WORKSPACE
-        shell: bash
-      - name: pwd
-        run: pwd
-        shell: bash
       - name: Run unit tests
+        # run-cmake puts the build dir adjacent to the checkout
         run: |
           cd ..
           ./b/ninja/unit_test
