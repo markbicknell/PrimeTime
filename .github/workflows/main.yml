@@ -83,3 +83,6 @@ jobs:
       - name: post_build_dir
         run: find $RUNNER_WORKSPACE
         shell: bash
+      - name: Run unit tests
+        run: $(RUNNER_WORKSPACE)/PrimeTime/b/ninja/unit_test
+        shell: bash
