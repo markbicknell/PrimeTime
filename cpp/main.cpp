@@ -11,7 +11,8 @@
 
 // Convert an int such as 1000000 to a string with thousands separators e.g. "1,000,000"
 template<typename T>
-std::string int_to_grouped_digits(T integer) {
+std::string int_to_grouped_digits(T integer)
+{
     std::ostringstream oss;
     oss.imbue(std::locale(""));
     oss << integer;
@@ -19,8 +20,10 @@ std::string int_to_grouped_digits(T integer) {
 }
 
 
-int main(int argc, const char** argv) {
-    if(argc != 2) {
+int main(int argc, const char** argv)
+{
+    if(argc != 2)
+    {
         std::cout << "Usage: primetime <num_primes_to_generate>";
         return 0;
     }
@@ -33,7 +36,8 @@ int main(int argc, const char** argv) {
     std::chrono::duration<double> calculation_time = end - start;
 
 #ifdef PRINT_RESULTS
-    for (auto prime : primes) {
+    for (auto prime : primes)
+    {
         std::cout << std::to_string(prime) << "\n";
     }
 #endif // PRINT_RESULTS
